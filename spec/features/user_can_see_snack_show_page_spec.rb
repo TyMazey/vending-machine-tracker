@@ -10,6 +10,7 @@ RSpec.describe 'as a visitor' do
 
     visit snack_path(snack_1)
 
+    expect(page).to have_content('Cheetos')
     expect(page).to have_content('Price: $1.5')
 
     within '.locations' do
@@ -19,6 +20,6 @@ RSpec.describe 'as a visitor' do
       expect(page).to have_content('another place')
       expect(page).to have_content("Average Price: $1.5")
       expect(page).to have_content("Number of snacks: 1")
-    end 
+    end
   end
 end
